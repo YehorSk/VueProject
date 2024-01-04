@@ -76,9 +76,11 @@ nav{
     width: 80%;
 }
 .nav-menu li{
+    display: inline;
     list-style: none;
 }
 .logo{
+    display:inline;
     color: white;
     font-size: 2.5rem;
     letter-spacing: 6px;

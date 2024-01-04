@@ -1,8 +1,5 @@
 <style scoped>
-@import "/css/style.css";
-@import "/css/bootstrap.min.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css";
+
 </style>
 <template>
   <header>
@@ -31,25 +28,7 @@
 
     </div>
   </section>
-  <section class="crypto" id="learn-section">
-    <h1 class="name">What you'll learn</h1>
-    <div class="item">
-      <img src="/img/wallets.png" alt="" id="crypto-img">
-      <div class="present">
-        <ul id="btns">
-          <li><button class="btn active dontHover" id="wallets">Wallets</button> </li>
-          <li><button class="btn" id="mining">Mining</button> </li>
-          <li><button class="btn" id="portfolio">Portfolio</button> </li>
-          <li><button class="btn" id="trade">Trade</button> </li>
-
-        </ul>
-        <div class="text">
-          <h1 id="crypto-name">Wallets</h1>
-          <p id="crypto-text">Know about 4 types of wallets and how to secure your crypto currency investments</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <LearningComponent/>
   <section class="crypto-prices" id="crypto-section">
     <h1 class="name">Crypto Prices</h1>
     <div class="container-fluid my-5">
@@ -126,52 +105,7 @@
 
     </article>
   </section>
-  <section class="course-price" id="price-section">
-    <h1 class="name">Course PRICELIST</h1>
-    <div class="table-price">
-      <table>
-        <thead>
-        <tr>
-          <th scope="col">Course</th>
-          <th scope="col">Investing</th>
-          <th scope="col">Mining</th>
-          <th scope="col">Portfolio</th>
-          <th scope="col">Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td scope="row" data-label="Course">COMPLETE COURSE </td>
-          <td data-label="Investing">+</td>
-          <td data-label="Mining">+</td>
-          <td data-label="Portfolio">+</td>
-          <td data-label="Portfolio">40$</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Course">CRYPTOCURRENCY INVESTING </td>
-          <td data-label="Investing">+</td>
-          <td data-label="Mining">-</td>
-          <td data-label="Portfolio">-</td>
-          <td data-label="Portfolio">20$</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Course">CRYPTOCURRENCY MINING </td>
-          <td data-label="Investing">-</td>
-          <td data-label="Mining">+</td>
-          <td data-label="Portfolio">-</td>
-          <td data-label="Portfolio">15$</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Course">CRYPTOCURRENCY PORTFOLIO </td>
-          <td data-label="Investing">-</td>
-          <td data-label="Mining">-</td>
-          <td data-label="Portfolio">+</td>
-          <td data-label="Portfolio">20$</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+  <PricesComponent/>
   <section class="FAQ" id="faq-section">
     <h1 class="name">FAQ</h1>
     <div class="accordion">
@@ -217,7 +151,6 @@
           <li><a href="#testimonial-section">Testimonial</a></li>
           <li><a href="#price-section">Prices</a></li>
           <li><a href="#faq-section">FAQ</a></li>
-          <li><a href="#questions-section">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -228,6 +161,8 @@
 <script setup>
 import "https://code.jquery.com/jquery-3.6.0.min.js";
 import "https://kit.fontawesome.com/b3db48d41c.js";
+import PricesComponent from "@/components/PricesComponent.vue";
+import LearningComponent from "@/components/LearningComponent.vue";
 </script>
 
 

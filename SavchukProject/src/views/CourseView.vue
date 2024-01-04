@@ -1,90 +1,61 @@
 <style scoped>
-@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css";
-@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
 @import "/css/styles.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
-@import "/css/bootstrap.min.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css";
 </style>
-
-
 <template>
-  <header class="header">
-    <div class="header__container">
-      <router-link
-          to="/">
-        <a href="#" class="header__logo">CRYPTO</a>
-      </router-link>
+  <v-card>
+    <v-layout>
+      <v-navigation-drawer
+          expand-on-hover
+          rail
+      >
+        <router-link
+            to="/">
+        <v-list-item prepend-icon="mdi-home" title="Home"></v-list-item>
+        </router-link>
+        <v-divider></v-divider>
 
-      <div class="header__search"></div>
-      <div class="header__toggle">
-        <i class="fas fa-bars" id="header-toggle"></i>
-      </div>
-    </div>
-  </header>
+        <v-list>
+          <v-list-item v-for="(item, key, index) in items" :key="index" :value="item.value" @click="menuClick(item)">
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+<!--              <v-list-item-subtitle>{{ item.link }}</v-list-item-subtitle>-->
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
 
-  <div class="nav" id="navbar">
-    <nav class="nav__container">
-      <div>
-        <a href="index.html" class="nav__link nav__logo">
-          <i class='bx bx-bitcoin' ></i>
-          <span class="nav__logo-name">CRYPTO</span>
-        </a>
-        <div class="nav__list">
-          <div class="nav__items">
-            <a href="index.html" class="nav__link active">
-              <i class="fas fa-home"></i>
-              <span class="nav__name">Home</span>
-            </a>
-          </div>
-          <div class="nav__link active">
-            <i class="fa fa-caret-down"></i><span class="nav__name">Section Title</span>
-          </div>
-          <a href="#" class="nav__dropdown-item" id="les1-1">
-            <i class="fa fa-long-arrow-right"></i> Lesson Title 1
-          </a>
-          <a href="#" class="nav__dropdown-item" id="les1-2">
-            <i class="fa fa-long-arrow-right"></i> Lesson Title 2
-          </a>
+      </v-navigation-drawer>
 
-          <a href="#" class="nav__link active">
-            <i class="fas fa-phone"></i>
-            <span class="nav__name">Contact us</span>
-          </a>
-          <a href="#" class="nav__link active">
-            <i class="fas fa-pencil"></i>
-            <span class="nav__name">Notes</span>
-          </a>
-          <!-- Other navigation items go here -->
+      <v-main >
+        <div class="videoWrapper">
+          <iframe  :src="link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <!-- End of nav__list -->
-      </div>
-      <!-- End of nav__container -->
-    </nav>
-  </div>
-
-  <main>
-    <section>
-      <div class="videoWrapper">
-        <!-- Video iframe code goes here -->
-      </div>
-    </section>
-
-    <div class="lesson-overview">
-      <div class="overview">
-        <p>Overview</p>
-      </div>
-      <div class="description"><p>About this lesson</p></div>
-      <!-- Lesson description and content go here -->
-    </div>
-
-    <!-- Comments section goes here -->
-  </main>
+        <div class="lesson-overview">
+          <div class="overview">
+            <p>{{ name }}</p>
+          </div>
+          <div class="description"><p>About this lesson</p></div>
+          <!-- Lesson description and content go here -->
+        </div>
+      </v-main>
+    </v-layout>
+  </v-card>
 </template>
-
 <script>
-import "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js";
-import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js";
+import lessons from '/src/assets/lessons.json'
+export default {
+  data(){
+    return {
+      items: lessons,
+      name: lessons[0].title,
+      link: lessons[0].link
+    }
+  },
+  methods: {
+    menuClick(action){
+      this.name=action.title;
+      this.link=action.link;
+    }
+  }
+}
 </script>

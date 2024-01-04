@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "title": "Wallets",
+    "text": "Know about 4 types of wallets and how to secure your crypto currency investments",
+    "img": "/img/wallets.png"
+  },
+  {
+    "id": 1,
+    "title": "Mining",
+    "text": "Understand the basics of mining and setting up a Bitcoin mining facility",
+    "img": "/img/mining.png"
+  },
+  {
+    "id": 2,
+    "title": "Portfolio",
+    "text": "Master the art of putting together a profitable diversified investment portfolio",
+    "img": "/img/portfolio.png"
+  },
+  {
+    "id": 3,
+    "title": "Trade",
+    "text": "Trade cryptocurrencies with systematic trading process like a professional trader",
+    "img": "/img/trade.png"
+  }
+
+]
