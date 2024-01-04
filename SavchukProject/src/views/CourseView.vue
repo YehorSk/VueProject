@@ -6,8 +6,7 @@
   <v-card>
     <v-layout>
       <v-navigation-drawer
-          expand-on-hover
-          rail
+
       >
         <router-link
             to="/">
@@ -16,7 +15,7 @@
         <v-divider></v-divider>
 
         <v-list>
-          <v-list-item v-for="(item, key, index) in items" :key="index" :value="item.value" @click="menuClick(item)">
+          <v-list-item :width="200" v-for="(item, key, index) in items" :key="index" :value="item.value" @click="menuClick(item)">
             <v-list-item-content>
               <v-list-item-title>{{ item.title }}</v-list-item-title>
 <!--              <v-list-item-subtitle>{{ item.link }}</v-list-item-subtitle>-->
@@ -25,6 +24,7 @@
         </v-list>
 
       </v-navigation-drawer>
+      
 
       <v-main >
         <div class="videoWrapper">
