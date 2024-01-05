@@ -13,6 +13,11 @@
         <v-list-item prepend-icon="mdi-home" title="Home"></v-list-item>
         </router-link>
         <v-divider></v-divider>
+        <router-link
+            to="/coins">
+          <v-list-item title="Coins"></v-list-item>
+        </router-link>
+        <v-divider></v-divider>
 
         <v-list>
           <v-list-item :width="200" v-for="(item, key, index) in items" :key="index" :value="item.value" @click="menuClick(item)">
