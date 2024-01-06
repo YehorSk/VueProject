@@ -31,7 +31,7 @@
           </v-col>
         </v-row>
         <v-col cols="auto">
-          <v-btn style="background-color:green;" @click="searchStore.followCoin(coin,coin.image.large)">Follow</v-btn>
+          <v-btn style="background-color:green;" @click="searchStore.followCoin(coin)">Follow</v-btn>
         </v-col>
         <v-col cols="auto">
           <v-btn style="background-color:red;">Unfollow</v-btn>

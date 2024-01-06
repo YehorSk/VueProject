@@ -17,9 +17,9 @@ export const useSearchStore = defineStore("searchStore",{
             this.coins = data.coins;
             this.loader = false;
         },
-        followCoin(object, large){
+        followCoin(object){
             const cryptoStore = useCryptoStore();
-            cryptoStore.coins.push({...object, large: large});
+            cryptoStore.coins.push(object);
         }
     }
 });
