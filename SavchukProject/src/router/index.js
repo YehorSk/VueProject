@@ -22,6 +22,11 @@ const router = createRouter({
       path: '/coins',
       name: 'coins',
       component: () => import('../views/CryptoView.vue')
+    },
+    {
+      path: '/coins/:slug',
+      name: 'coinsInfo',
+      component: () => import('../views/CoinInfoView.vue')
     }
   ]
 })

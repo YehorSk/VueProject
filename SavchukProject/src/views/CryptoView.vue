@@ -29,14 +29,11 @@ export default {
       <v-btn
           icon
           class="hidden-xs-only"
-          to="/course"
+          @click="$router.back()"
       >
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
-
       <v-toolbar-title>Course</v-toolbar-title>
-
-      <v-spacer></v-spacer>
 
     </v-toolbar>
   </v-card>
