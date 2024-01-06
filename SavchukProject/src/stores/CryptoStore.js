@@ -1,18 +1,17 @@
 import {defineStore} from "pinia";
 
-const url = "https://api.coingecko.com/api/v3/coins/list";
-const url_coin = "https://api.coingecko.com/api/v3/coins/";
-
-
 export const useCryptoStore = defineStore("CryptoStore",{
     state: () => ({
         coins: []
     }),
+    getters: {
+        totalCountCoins(){
+            return this.coins.length;
+        }
+    },
     actions: {
-        async getCoins(){
-            const res = await fetch(`${url}`);
-            const data = await res.json();
-            this.coins = data;
+        deleteCoin(id){
+            this.coins = this.coins.filter((el)=>el.id !== id);
         }
     }
 });

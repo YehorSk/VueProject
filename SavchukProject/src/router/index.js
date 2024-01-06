@@ -27,7 +27,17 @@ const router = createRouter({
       path: '/coins/:slug',
       name: 'coinsInfo',
       component: () => import('../views/CoinInfoView.vue')
-    }
+    },
+    {
+      path: '/favorite',
+      name: 'favoriteCoins',
+      component: () => import('../views/FavoriteCryptoView.vue')
+    },
+    // {
+    //   path: '/coins/favorite/:slug',
+    //   name: 'coinsInfo',
+    //   component: () => import('../views/CoinInfoView.vue')
+    // }
   ]
 })
 

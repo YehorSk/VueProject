@@ -12,9 +12,6 @@ export default {
       cryptoStore: useCryptoStore(),
       searchStore: useSearchStore()
     }
-  },
-  mounted() {
-    this.cryptoStore.getCoins();
   }
 }
 </script>
@@ -34,7 +31,10 @@ export default {
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
       <v-toolbar-title>Course</v-toolbar-title>
-
+      <v-btn icon
+      to="/favorite">
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
     </v-toolbar>
   </v-card>
   <v-container >
