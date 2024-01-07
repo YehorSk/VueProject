@@ -4,20 +4,7 @@
       flat
       rounded="0"
   >
-    <v-toolbar>
-      <v-btn
-          icon
-          class="hidden-xs-only"
-          @click="$router.back()"
-      >
-        <v-icon>mdi-arrow-left</v-icon>
-      </v-btn>
-      <v-toolbar-title>Go Back</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-    </v-toolbar>
+<ToolbarComponent/>
   </v-card>
   <div>
     <h1 v-if="loader">Loading</h1>
@@ -30,11 +17,12 @@
             </v-sheet>
           </v-col>
         </v-row>
-        <v-col cols="auto">
+
+        <v-col cols="auto" v-if="checkCoinId(coin) !== true">
           <v-btn style="background-color:green;" @click="searchStore.followCoin(coin)">Follow</v-btn>
         </v-col>
-        <v-col cols="auto">
-          <v-btn style="background-color:red;">Unfollow</v-btn>
+        <v-col cols="auto" v-else>
+          <v-btn style="background-color:red;" @click="this.cryptoStore.deleteCoin(coin.id)">Unfollow</v-btn>
         </v-col>
         <h1>Market stats</h1>
         <v-container class=" bg-black">
@@ -120,14 +108,18 @@
 
 <script>
 import {useSearchStore} from "@/stores/SearchStore.js";
+import {useCryptoStore} from "@/stores/CryptoStore.js";
+import ToolbarComponent from "@/components/ToolbarComponent.vue";
 
 export default {
   name: "CoinInfoView",
+  components: {ToolbarComponent},
   data(){
     return{
       coin: Object,
       loader: false,
       searchStore: useSearchStore(),
+      cryptoStore: useCryptoStore()
     }
   },
   methods:{
@@ -138,7 +130,10 @@ export default {
       this.coin = await res.json();
       this.loader = false;
       console.log(this.coin);
-    }
+    },
+    checkCoinId(object){
+      return this.cryptoStore.checkCoin(object.id)
+    },
   },
   mounted() {
     this.getCoinInfo();

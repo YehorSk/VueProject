@@ -12,9 +12,7 @@ export default {
 </script>
 
 <template>
-  <template>
-
-    <router-link :to="`/coins/${coin.api_symbol}`">
+  <router-link :to="`/coins/${coin.web_slug}`">
       <v-card
           class="mx-auto my-8"
           max-width="600"
@@ -26,7 +24,6 @@ export default {
           rel="noopener"
       ></v-card>
     </router-link>
-  </template>
 </template>
 
 <style scoped>

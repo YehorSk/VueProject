@@ -2,11 +2,12 @@
 import { useCryptoStore} from "@/stores/CryptoStore.js";
 import { useSearchStore } from "@/stores/SearchStore.js";
 import CoinComponent from "@/components/CoinComponent.vue";
+import ToolbarComponent from "@/components/ToolbarComponent.vue";
 
 
 export default {
   name: "Crypto",
-  components: {CoinComponent},
+  components: {ToolbarComponent, CoinComponent},
   data() {
     return{
       cryptoStore: useCryptoStore(),
@@ -22,20 +23,7 @@ export default {
       flat
       rounded="0"
   >
-    <v-toolbar>
-      <v-btn
-          icon
-          class="hidden-xs-only"
-          @click="$router.back()"
-      >
-        <v-icon>mdi-arrow-left</v-icon>
-      </v-btn>
-      <v-toolbar-title>Course</v-toolbar-title>
-      <v-btn icon
-      to="/favorite">
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-    </v-toolbar>
+    <ToolbarComponent/>
   </v-card>
   <v-container >
 

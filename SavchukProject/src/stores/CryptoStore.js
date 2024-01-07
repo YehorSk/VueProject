@@ -1,8 +1,9 @@
 import {defineStore} from "pinia";
+import {useStorage} from "@vueuse/core";
 
 export const useCryptoStore = defineStore("CryptoStore",{
     state: () => ({
-        coins: []
+        coins: useStorage('coins',[]),
     }),
     getters: {
         totalCountCoins(){
@@ -12,6 +13,10 @@ export const useCryptoStore = defineStore("CryptoStore",{
     actions: {
         deleteCoin(id){
             this.coins = this.coins.filter((el)=>el.id !== id);
+        },
+        checkCoin(id) {
+            console.log(this.coins.some((coin) => coin.id === id))
+            return this.coins.some((coin) => coin.id === id);
         }
     }
 });
