@@ -3,7 +3,9 @@
 
 </style>
 <template>
+
   <v-card>
+
     <v-layout>
       <v-navigation-drawer
 
@@ -48,7 +50,9 @@
 </template>
 <script>
 import lessons from '/src/assets/lessons.json'
+import ToolbarComponent from "@/components/ToolbarComponent.vue";
 export default {
+  components: {ToolbarComponent},
   data(){
     return {
       items: lessons,
