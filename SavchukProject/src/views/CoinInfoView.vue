@@ -88,8 +88,8 @@
         <v-row justify="center">
           <v-col cols="12">
             <v-sheet class="pa-2  bg-black">
-              <h1>{{coin.symbol}} Price</h1>
-              <h3 v-if="coin.market_data && coin.market_data.current_price"><span style="color:green">{{ coin.market_data.current_price.eur }}</span></h3>
+              <h1>{{coin.symbol}} Price {{userPrefStore.currency.toUpperCase()}}</h1>
+              <h3 v-if="coin.market_data && coin.market_data.current_price"><span style="color:green">{{ coin.market_data.current_price[userPrefStore.currency] }}</span></h3>
             </v-sheet>
           </v-col>
         </v-row>
@@ -109,6 +109,7 @@
 <script>
 import {useSearchStore} from "@/stores/SearchStore.js";
 import {useCryptoStore} from "@/stores/CryptoStore.js";
+import {useUserPrefStore} from "@/stores/UserPrefStore.js";
 import ToolbarComponent from "@/components/ToolbarComponent.vue";
 
 export default {
@@ -119,7 +120,8 @@ export default {
       coin: Object,
       loader: false,
       searchStore: useSearchStore(),
-      cryptoStore: useCryptoStore()
+      cryptoStore: useCryptoStore(),
+      userPrefStore: useUserPrefStore()
     }
   },
   methods:{
