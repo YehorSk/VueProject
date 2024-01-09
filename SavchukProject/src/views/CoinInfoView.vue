@@ -59,19 +59,19 @@
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>PRICE CHANGE (1H)</h3>
-                <p v-if="coin.market_data && coin.market_data.price_change_percentage_1h_in_currency.eur">{{ coin.market_data.price_change_percentage_1h_in_currency.eur }} %</p>
+                <p v-if="coin.market_data && coin.market_data.price_change_percentage_1h_in_currency[userPrefStore.currency]">{{ coin.market_data.price_change_percentage_1h_in_currency[userPrefStore.currency] }} %</p>
               </v-sheet>
             </v-col>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>PRICE CHANGE (24H)</h3>
-                <p v-if="coin.market_data && coin.market_data.price_change_percentage_24h_in_currency.eur">{{ coin.market_data.price_change_percentage_24h_in_currency.eur }} %</p>
+                <p v-if="coin.market_data && coin.market_data.price_change_percentage_24h_in_currency[userPrefStore.currency]">{{ coin.market_data.price_change_percentage_24h_in_currency[userPrefStore.currency] }} %</p>
               </v-sheet>
             </v-col>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>PRICE CHANGE (7D)</h3>
-                <p v-if="coin.market_data && coin.market_data.price_change_percentage_7d_in_currency.eur">{{ coin.market_data.price_change_percentage_7d_in_currency.eur }} %</p>
+                <p v-if="coin.market_data && coin.market_data.price_change_percentage_7d_in_currency[userPrefStore.currency]">{{ coin.market_data.price_change_percentage_7d_in_currency[userPrefStore.currency] }} %</p>
               </v-sheet>
             </v-col>
           </v-row>

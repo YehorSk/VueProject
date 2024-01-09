@@ -1,9 +1,10 @@
 import {defineStore} from "pinia";
+import {useStorage} from "@vueuse/core";
 
 
 export const useUserPrefStore = defineStore("UserPrefStore",{
     state:() => ({
-        currency: "eur",
+        currency: useStorage('currency',"eur"),
         theme: "dark"
     }),
     actions:{

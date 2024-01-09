@@ -18,6 +18,7 @@ export default {
 </script>
 
 <template>
+
   <v-card
       color="grey-lighten-4"
       flat
