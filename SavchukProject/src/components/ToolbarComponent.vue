@@ -28,9 +28,14 @@ export default {
       </v-btn>
       <v-toolbar-title>Go Back</v-toolbar-title>
     <v-toolbar-items>
+      <v-btn variant="text">
+        Balance {{userPrefStore.money}}
+      </v-btn>
+      <v-divider vertical></v-divider>
       <v-menu
           open-on-hover
       >
+
         <template v-slot:activator="{ props }">
           <v-btn
 
@@ -49,7 +54,7 @@ export default {
           </v-list-item>
         </v-list>
       </v-menu>
-
+      <v-divider vertical></v-divider>
     <v-btn variant="text"
            to="/favorite">
       <v-icon>mdi-heart</v-icon>

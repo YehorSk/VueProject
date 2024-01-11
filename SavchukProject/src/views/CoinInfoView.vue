@@ -24,6 +24,16 @@
         <v-col cols="auto" v-else>
           <v-btn style="background-color:red;" @click="this.cryptoStore.deleteCoin(coin.id)">Unfollow</v-btn>
         </v-col>
+        <v-sheet width="300" class="mr-auto">
+          <v-form @submit.prevent>
+            <v-text-field
+                v-model="amount"
+                :rules="rules"
+                label="Type amount"
+            ></v-text-field>
+            <v-btn type="submit" block class="mt-2">Buy</v-btn>
+          </v-form>
+        </v-sheet>
         <h1>Market stats</h1>
         <v-container class=" bg-black">
           <v-row no-gutters>
@@ -121,7 +131,14 @@ export default {
       loader: false,
       searchStore: useSearchStore(),
       cryptoStore: useCryptoStore(),
-      userPrefStore: useUserPrefStore()
+      userPrefStore: useUserPrefStore(),
+      amount: '',
+      rules: [
+        value => {
+          if (value) return true
+          return 'You must enter a value.'
+        },
+      ],
     }
   },
   methods:{

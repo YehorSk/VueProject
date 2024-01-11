@@ -3,42 +3,49 @@
     "id": 1,
     "title": "Lesson 1",
     "value": 1,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ"
+    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
+    "prise": 1000
   },
   {
     "id": 2,
     "title": "Lesson 2",
     "value": 2,
-    "link": "https://www.youtube.com/embed/1QPLU4_iwmo?si=ILoSyR84xHJUoWGI"
+    "link": "https://www.youtube.com/embed/1QPLU4_iwmo?si=ILoSyR84xHJUoWGI",
+    "prise": 11000
   },
   {
     "id": 3,
     "title": "Lesson 3",
     "value": 3,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ"
+    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
+    "prise": 20000
   },
   {
     "id": 4,
     "title": "Lesson 4",
     "value": 4,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ"
+    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
+    "prise": 4000
   },
   {
     "id": 5,
     "title": "Lesson 5",
     "value": 5,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ"
+    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
+    "prise": 7000
   },
   {
     "id": 6,
     "title": "Lesson 6",
     "value": 6,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ"
+    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
+    "prise": 500
   },
   {
     "id": 7,
     "title": "Lesson 7",
     "value": 7,
-    "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D"
+    "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
+    "prise": 9000
   }
 ]

@@ -22,13 +22,13 @@
         <v-divider></v-divider>
 <!--        mdi-checkbox-marked-circle  -->
         <v-list>
-          <v-list-item :width="400" v-for="(item, key, index) in items" :key="index" :value="item.value" @click="menuClick(item)">
+          <v-list-item :min-width="900" v-for="(item, key, index) in items" :key="index" :value="item.value" @click="menuClick(item)">
             <v-btn icon @click="useLesson(item)">
               <v-icon>{{ !this.userPrefStore.checkLesson(item) ? 'mdi-checkbox-marked-circle-outline' : 'mdi-checkbox-blank-circle-outline' }}</v-icon>
             </v-btn>
 
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title>{{ item.title }} - Prize {{ item.prise }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -62,6 +62,7 @@ export default {
       items: lessons,
       name: lessons[0].title,
       link: lessons[0].link,
+      prise: lessons[0].prise,
       userPrefStore: useUserPrefStore()
     }
   },
