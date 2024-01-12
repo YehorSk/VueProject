@@ -30,13 +30,17 @@ export const useUserPrefStore = defineStore("UserPrefStore",{
                 console.log("deleted")
             }
         },
-        checkLesson(lesson,checkArray){
+        checkLesson(lesson){
             const existingLessons = this.lessons.filter(el => el.id === lesson.id);
             if (existingLessons.length === 0) {
                 return true
             }else{
                 return false
             }
+        },
+        addToPortfolio(coin,amount,price){
+            this.portfolio.push({ ...coin, amount: amount, price: price});
+            this.money -= price
         }
     }
 })

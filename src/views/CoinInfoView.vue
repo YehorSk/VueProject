@@ -27,11 +27,13 @@
         <v-sheet width="300" class="mr-auto">
           <v-form @submit.prevent>
             <v-text-field
+                type="number"
                 v-model="amount"
                 :rules="rules"
                 label="Type amount"
             ></v-text-field>
-            <v-btn type="submit" block class="mt-2">Buy</v-btn>
+            <h2 :style="{ color: totalAmount<userPrefStore.money ? 'green' : 'red' }">Total {{ totalAmount }}</h2>
+            <v-btn type="submit" block class="mt-2" :disabled="totalAmount>=userPrefStore.money || totalAmount===0" @click="addToPortfolio(coin,amount,totalAmount)">Buy</v-btn>
           </v-form>
         </v-sheet>
         <h1>Market stats</h1>
@@ -133,6 +135,7 @@ export default {
       cryptoStore: useCryptoStore(),
       userPrefStore: useUserPrefStore(),
       amount: '',
+      totalAmount: 0,
       rules: [
         value => {
           if (value) return true
@@ -153,9 +156,18 @@ export default {
     checkCoinId(object){
       return this.cryptoStore.checkCoin(object.id)
     },
+    addToPortfolio(coin,amount,price){
+      this.userPrefStore.addToPortfolio(coin,amount,price)
+      console.log("added")
+    }
   },
   mounted() {
     this.getCoinInfo();
+  },
+  watch:{
+    amount(value){
+      this.totalAmount = (value*this.coin.market_data.current_price[this.userPrefStore.currency]).toFixed(2)
+   }
   }
 }
 </script>
