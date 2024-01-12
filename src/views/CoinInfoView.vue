@@ -24,31 +24,50 @@
         <v-col cols="auto" v-else>
           <v-btn style="background-color:red;" @click="this.cryptoStore.deleteCoin(coin.id)">Unfollow</v-btn>
         </v-col>
+        <h1>Buy {{ coin.name }}</h1>
         <v-sheet width="300" class="mr-auto">
           <v-form @submit.prevent>
             <v-text-field
                 type="number"
                 v-model="amount"
-                :rules="rules"
                 label="Type amount"
             ></v-text-field>
             <h2 :style="{ color: totalAmount<userPrefStore.money ? 'green' : 'red' }">Total {{ totalAmount }}</h2>
-            <v-btn type="submit" block class="mt-2" :disabled="totalAmount>=userPrefStore.money || totalAmount===0" @click="addToPortfolio(coin,amount,totalAmount)">Buy</v-btn>
+            <v-btn type="submit" block class="mt-2" :disabled="totalAmount>=userPrefStore.money || totalAmount<=0" @click="addToPortfolio(coin,amount,totalAmount)">Buy</v-btn>
           </v-form>
         </v-sheet>
+        <div v-if="userPrefStore.userHave(coin)">
+        <h1>Sell {{ coin.name }}</h1>
+        <v-sheet width="300" class="mr-auto">
+          <v-form @submit.prevent>
+            <v-text-field
+                type="number"
+                v-model="sellAmount"
+                label="Type amount"
+            ></v-text-field>
+
+              <h2>Total spent: {{userPrefStore.userHave(coin).price.toFixed(2)}}</h2>
+              <h2>You have: {{userPrefStore.userHave(coin).amount}}</h2>
+              <h2 :style="{ color: sellAmount<=userPrefStore.userHave(coin).amount ? 'green' : 'red' }">Total {{ totalSellAmount }}</h2>
+              <v-btn type="submit" :disabled="totalSellAmount<=0 || sellAmount>userPrefStore.userHave(coin).amount" block class="mt-2"  @click="sellFromPortfolio(coin,sellAmount,totalSellAmount)">Sell</v-btn>
+
+          </v-form>
+        </v-sheet>
+        </div>
         <h1>Market stats</h1>
+        <div v-if="coin.market_data">
         <v-container class=" bg-black">
           <v-row no-gutters>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>MARKET CAP</h3>
-                <p v-if="coin.market_data && coin.market_data.market_cap.eur">{{coin.market_data.market_cap.eur}}</p>
+                <p>{{coin.market_data.market_cap.eur}}</p>
               </v-sheet>
             </v-col>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>CIRCULATING SUPPLY</h3>
-                <p v-if="coin.market_data && coin.market_data.circulating_supply">{{coin.market_data.circulating_supply}} {{ coin.symbol }} </p>
+                <p>{{coin.market_data.circulating_supply}} {{ coin.symbol }} </p>
               </v-sheet>
             </v-col>
             <v-col>
@@ -65,31 +84,31 @@
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>POPULARITY</h3>
-                <p v-if="coin.market_data && coin.market_data.market_cap_rank">{{ coin.market_data.market_cap_rank }}</p>
+                <p>{{ coin.market_data.market_cap_rank }}</p>
               </v-sheet>
             </v-col>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>PRICE CHANGE (1H)</h3>
-                <p v-if="coin.market_data && coin.market_data.price_change_percentage_1h_in_currency[userPrefStore.currency]">{{ coin.market_data.price_change_percentage_1h_in_currency[userPrefStore.currency] }} %</p>
+                <p>{{ coin.market_data.price_change_percentage_1h_in_currency[userPrefStore.currency] }} %</p>
               </v-sheet>
             </v-col>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>PRICE CHANGE (24H)</h3>
-                <p v-if="coin.market_data && coin.market_data.price_change_percentage_24h_in_currency[userPrefStore.currency]">{{ coin.market_data.price_change_percentage_24h_in_currency[userPrefStore.currency] }} %</p>
+                <p>{{ coin.market_data.price_change_percentage_24h_in_currency[userPrefStore.currency] }} %</p>
               </v-sheet>
             </v-col>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">
                 <h3>PRICE CHANGE (7D)</h3>
-                <p v-if="coin.market_data && coin.market_data.price_change_percentage_7d_in_currency[userPrefStore.currency]">{{ coin.market_data.price_change_percentage_7d_in_currency[userPrefStore.currency] }} %</p>
+                <p>{{ coin.market_data.price_change_percentage_7d_in_currency[userPrefStore.currency] }} %</p>
               </v-sheet>
             </v-col>
           </v-row>
 
         </v-container>
-
+        </div>
         <v-row justify="center">
           <v-col cols="12">
             <v-sheet class="pa-2  bg-black">
@@ -135,13 +154,9 @@ export default {
       cryptoStore: useCryptoStore(),
       userPrefStore: useUserPrefStore(),
       amount: '',
+      sellAmount: '',
       totalAmount: 0,
-      rules: [
-        value => {
-          if (value) return true
-          return 'You must enter a value.'
-        },
-      ],
+      totalSellAmount: 0,
     }
   },
   methods:{
@@ -158,7 +173,11 @@ export default {
     },
     addToPortfolio(coin,amount,price){
       this.userPrefStore.addToPortfolio(coin,amount,price)
-      console.log("added")
+      this.amount = 0
+    },
+    sellFromPortfolio(coin,amount,price){
+      this.userPrefStore.sellFromPortfolio(coin,amount,price)
+      this.sellAmount = 0
     }
   },
   mounted() {
@@ -166,8 +185,11 @@ export default {
   },
   watch:{
     amount(value){
-      this.totalAmount = (value*this.coin.market_data.current_price[this.userPrefStore.currency]).toFixed(2)
-   }
+      this.totalAmount = Math.round(value*this.coin.market_data.current_price[this.userPrefStore.currency] * 100)/100
+   },
+    sellAmount(value){
+      this.totalSellAmount = Math.round(value*this.coin.market_data.current_price[this.userPrefStore.currency] * 100)/100
+    }
   }
 }
 </script>

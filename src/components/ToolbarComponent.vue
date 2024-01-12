@@ -28,8 +28,8 @@ export default {
       </v-btn>
       <v-toolbar-title>Go Back</v-toolbar-title>
     <v-toolbar-items>
-      <v-btn variant="text">
-        Balance {{userPrefStore.money}}
+      <v-btn variant="text" to="/portfolio">
+        Balance {{ userPrefStore.money}}
       </v-btn>
       <v-divider vertical></v-divider>
       <v-menu
@@ -59,6 +59,11 @@ export default {
            to="/favorite">
       <v-icon>mdi-heart</v-icon>
     </v-btn>
+      <v-divider vertical></v-divider>
+      <v-btn variant="text"
+             to="/coins">
+        Coins
+      </v-btn>
     <v-divider vertical></v-divider>
     <v-btn variant="text"
            to="/course">

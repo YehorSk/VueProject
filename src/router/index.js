@@ -33,11 +33,11 @@ const router = createRouter({
       name: 'favoriteCoins',
       component: () => import('../views/FavoriteCryptoView.vue')
     },
-    // {
-    //   path: '/coins/favorite/:slug',
-    //   name: 'coinsInfo',
-    //   component: () => import('../views/CoinInfoView.vue')
-    // }
+    {
+      path: '/portfolio',
+      name: 'portfolio',
+      component: () => import('../views/PortfolioView.vue')
+    }
   ]
 })
 
