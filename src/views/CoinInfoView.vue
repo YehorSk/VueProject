@@ -79,7 +79,6 @@
               </v-sheet>
             </v-col>
           </v-row>
-
           <v-row no-gutters>
             <v-col>
               <v-sheet class="pa-2 ma-2 bg-black">

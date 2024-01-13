@@ -4,7 +4,10 @@
 <ToolbarComponent/>
   <h1>Potrfolio</h1>
   <div>
-    <PorfolioCoinComponent v-for="coin in userPrefStore.portfolio" :key="coin.id" :coin="coin"/>
+    <PorfolioCoinComponent
+        v-for="coin in userPrefStore.portfolio"
+        :key="coin.id"
+        :coin="coin"/>
   </div>
 </template>
 <script>

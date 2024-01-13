@@ -57,7 +57,11 @@ export default {
 
   <h1 v-if="searchStore.loader === true">Loading</h1>
   <div v-else>
-    <CoinComponent v-for="coin in searchStore.coins" :key="coin.id" :coin="coin"/>
+    <CoinComponent
+        v-for="coin in searchStore.coins"
+        :key="coin.id"
+        :coin="coin"
+    />
   </div>
 </template>
 

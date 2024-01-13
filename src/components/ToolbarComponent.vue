@@ -7,6 +7,11 @@ export default {
       userPrefStore: useUserPrefStore()
     }
   },
+  computed:{
+    balance(){
+      return Math.round((useUserPrefStore().money*100)/100)
+    }
+  },
   methods:{
 
   }
@@ -25,7 +30,7 @@ export default {
       <v-toolbar-title>Go Back</v-toolbar-title>
     <v-toolbar-items>
       <v-btn variant="text" to="/portfolio">
-        Balance {{ userPrefStore.money}}
+        Balance {{ balance}}
       </v-btn>
       <v-divider vertical></v-divider>
     <v-btn variant="text"

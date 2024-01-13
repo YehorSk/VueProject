@@ -7,9 +7,7 @@
   <v-card>
 
     <v-layout>
-      <v-navigation-drawer
-
-      >
+      <v-navigation-drawer>
         <router-link
             to="/">
         <v-list-item prepend-icon="mdi-home" title="Home"></v-list-item>
@@ -18,6 +16,11 @@
         <router-link
             to="/coins">
           <v-list-item title="Coins"></v-list-item>
+        </router-link>
+        <v-divider></v-divider>
+        <router-link
+            to="/portfolio">
+          <v-list-item title="Balance">{{userPrefStore.money}}</v-list-item>
         </router-link>
         <v-divider></v-divider>
 <!--        mdi-checkbox-marked-circle  -->
@@ -34,8 +37,6 @@
         </v-list>
 
       </v-navigation-drawer>
-      
-
       <v-main >
         <div class="videoWrapper">
           <iframe  :src="link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

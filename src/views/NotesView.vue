@@ -10,14 +10,17 @@
             :rules="rules"
             label="Title"
         ></v-text-field>
-        <v-textarea clearable label="Label"
+        <v-textarea clearable
+                    label="Label"
                     v-model="text"
                     :rules="rules"></v-textarea>
         <v-btn type="submit" block class="mt-2" @click="notesStore.addNote(title,text)">Submit</v-btn>
       </v-form>
     </v-sheet>
   <div>
-    <NoteComponent  v-for="note in notesStore.notes" :key="note.id" :note="note"></NoteComponent>
+    <NoteComponent  v-for="note in notesStore.notes"
+                    :key="note.id"
+                    :note="note"></NoteComponent>
   </div>
 </template>
 <script>

@@ -2,7 +2,11 @@
   <ToolbarComponent/>
   <h1>Favorite coins</h1>
   <div>
-    <FavoriteCoinComponent v-for="coin in cryptoStore.coins" :key="coin.id" :coin="coin"/>
+    <FavoriteCoinComponent
+        v-for="coin in cryptoStore.coins"
+        :key="coin.id"
+        :coin="coin"
+    />
   </div>
 </template>
 

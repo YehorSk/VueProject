@@ -17,11 +17,16 @@ export default {
         class="mx-auto my-8"
         max-width="600"
         :title="coin.id"
-
+        :subtitle="coin.symbol"
+        :prepend-avatar="coin.image"
         append-icon="mdi-open-in-new"
         target="_blank"
         rel="noopener"
-    ></v-card>
+    >
+      <v-card-text>
+        You have: {{ coin.amount }}
+      </v-card-text>
+    </v-card>
   </router-link>
 </template>
 
