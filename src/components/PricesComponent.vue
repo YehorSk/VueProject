@@ -1,6 +1,12 @@
 <script>
+import prices from '/src/assets/prices.json'
 export default {
-  name: "PricesComponent"
+  name: "PricesComponent",
+  data(){
+    return {
+      priceList: prices
+    }
+  },
 }
 </script>
 
@@ -18,34 +24,13 @@ export default {
           <th scope="col">Price</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-          <td scope="row" data-label="Course">COMPLETE COURSE </td>
-          <td data-label="Investing">+</td>
-          <td data-label="Mining">+</td>
-          <td data-label="Portfolio">+</td>
-          <td data-label="Portfolio">40$</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Course">CRYPTOCURRENCY INVESTING </td>
-          <td data-label="Investing">+</td>
-          <td data-label="Mining">-</td>
-          <td data-label="Portfolio">-</td>
-          <td data-label="Portfolio">20$</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Course">CRYPTOCURRENCY MINING </td>
-          <td data-label="Investing">-</td>
-          <td data-label="Mining">+</td>
-          <td data-label="Portfolio">-</td>
-          <td data-label="Portfolio">15$</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Course">CRYPTOCURRENCY PORTFOLIO </td>
-          <td data-label="Investing">-</td>
-          <td data-label="Mining">-</td>
-          <td data-label="Portfolio">+</td>
-          <td data-label="Portfolio">20$</td>
+        <tbody >
+        <tr  v-for="(el,ind) in priceList">
+          <td scope="row" data-label="Course">{{ el.course }} </td>
+          <td data-label="Investing">{{ el.investing }}</td>
+          <td data-label="Mining">{{ el.mining }}</td>
+          <td data-label="Portfolio">{{ el.portfolio }}</td>
+          <td data-label="Price">{{ el.price }}</td>
         </tr>
         </tbody>
       </table>

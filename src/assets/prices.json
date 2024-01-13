@@ -1,0 +1,30 @@
+[
+  {
+    "course": "COMPLETE COURSE",
+    "investing": "+",
+    "mining": "+",
+    "portfolio": "+",
+    "price": "40$"
+  },
+  {
+    "course": "CRYPTOCURRENCY INVESTING",
+    "investing": "+",
+    "mining": "-",
+    "portfolio": "-",
+    "price": "20$"
+  },
+  {
+    "course": "CRYPTOCURRENCY MINING",
+    "investing": "-",
+    "mining": "+",
+    "portfolio": "-",
+    "price": "15$"
+  },
+  {
+    "course": "CRYPTOCURRENCY PORTFOLIO",
+    "investing": "-",
+    "mining": "-",
+    "portfolio": "+",
+    "price": "30$"
+  }
+]
