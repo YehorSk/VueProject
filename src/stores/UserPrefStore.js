@@ -12,9 +12,6 @@ export const useUserPrefStore = defineStore("UserPrefStore",{
     })
     ,
     actions:{
-        changeCur(item){
-            this.currency = item.name
-        },
         actionLesson(lesson){
             const existingLessons = this.lessons.filter(el => el.id === lesson.id);
             if(existingLessons.length === 0){

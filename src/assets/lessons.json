@@ -47,5 +47,19 @@
     "value": 7,
     "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
     "prise": 9000
+  },
+  {
+    "id": 8,
+    "title": "Lesson 8",
+    "value": 8,
+    "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
+    "prise": 10000
+  },
+  {
+    "id": 9,
+    "title": "Lesson 9",
+    "value": 9,
+    "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
+    "prise": 1000
   }
 ]
