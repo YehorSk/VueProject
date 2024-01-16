@@ -3,71 +3,80 @@
     "id": 1,
     "title": "Lesson 1",
     "value": 1,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
-    "prise": 1000
+    "link": "https://www.youtube.com/embed/N920p250fmU?si=7uQVZuD_km0bAkVZ",
+    "prise": 1000,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   {
     "id": 2,
     "title": "Lesson 2",
     "value": 2,
-    "link": "https://www.youtube.com/embed/1QPLU4_iwmo?si=ILoSyR84xHJUoWGI",
-    "prise": 11000
+    "link": "https://www.youtube.com/embed/ZizNvew7DG0?si=kqaH80c9-Qqf-k9V",
+    "prise": 11000,
+    "text": "Praesent porttitor quam eu congue aliquet. Suspendisse nec quam in arcu consectetur aliquam. Quisque sit amet justo in justo hendrerit interdum vitae quis dui."
   },
   {
     "id": 3,
     "title": "Lesson 3",
     "value": 3,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
-    "prise": 20000
+    "link": "https://www.youtube.com/embed/pFePyxgUCXM?si=_1lJNWXGla-oy9p2",
+    "prise": 20000,
+    "text": "Donec nec malesuada sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam vel fringilla tortor. Curabitur ut aliquet leo."
   },
   {
     "id": 4,
     "title": "Lesson 4",
     "value": 4,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
-    "prise": 4000
+    "link": "https://www.youtube.com/embed/p_ioIkj0dRs?si=5G0ddN-RX_epzQTq",
+    "prise": 4000,
+    "text": "In hac habitasse platea dictumst. Ut ac tellus vel sem ullamcorper feugiat. Vestibulum fringilla auctor neque eu tristique. Nunc bibendum massa vel urna fermentum aliquam."
   },
   {
     "id": 5,
     "title": "Lesson 5",
     "value": 5,
-    "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
-    "prise": 7000
+    "link": "https://www.youtube.com/embed/pn5Xi7mz-sA?si=WGMbA0IJacbkKOTu",
+    "prise": 7000,
+    "text": "Fusce volutpat metus sit amet enim varius, a congue tortor hendrerit. Nullam nec turpis et tortor euismod dictum. Sed sed tristique quam. Vivamus ullamcorper tellus sit amet augue consequat, vel dapibus elit ultrices."
   },
   {
     "id": 6,
     "title": "Lesson 6",
     "value": 6,
     "link": "https://www.youtube.com/embed/q3tsfNY6bs0?si=VQ1zslClvh3BfpsJ",
-    "prise": 500
+    "prise": 500,
+    "text": "Aliquam erat volutpat. Nunc eu ex sed odio dignissim ullamcorper. In hac habitasse platea dictumst. Quisque in tellus at ex semper tincidunt ac vel augue."
   },
   {
     "id": 7,
     "title": "Lesson 7",
     "value": 7,
     "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
-    "prise": 9000
+    "prise": 9000,
+    "text": "Suspendisse feugiat risus vel libero ullamcorper, vel interdum justo ultrices. Quisque dapibus mi in lectus consectetur hendrerit. Curabitur ut vestibulum dolor. Suspendisse tincidunt elit nec erat suscipit, nec facilisis felis aliquam."
   },
   {
     "id": 8,
     "title": "Lesson 8",
     "value": 8,
     "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
-    "prise": 10000
+    "prise": 10000,
+    "text": "Vivamus eu orci sit amet justo scelerisque tristique. Fusce ac dapibus eros. Nullam et nisi nec purus sodales pellentesque. Ut facilisis ex vel elit congue, nec bibendum justo tincidunt."
   },
   {
     "id": 9,
     "title": "Lesson 9",
     "value": 9,
     "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
-    "prise": 1000
-  }
-,
+    "prise": 1000,
+    "text": "Maecenas euismod nibh a turpis ullamcorper, sit amet tincidunt elit sagittis. Fusce dapibus tellus vel metus interdum, vel posuere augue fringilla. Integer imperdiet ex nec tortor imperdiet, ac tincidunt purus fermentum."
+  },
   {
     "id": 10,
     "title": "Lesson 10",
     "value": 10,
     "link": "https://www.youtube.com/watch?v=4a8CogWA3-Y&pp=ygUNbm93aGVyZSB0byBnbw%3D%3D",
-    "prise": 15000
+    "prise": 15000,
+    "text": "Phasellus nec justo nec nulla malesuada malesuada. Sed in turpis vel purus sagittis laoreet. Proin eget massa vel nisi imperdiet pellentesque nec eget ligula. Nulla facilisi."
   }
 ]

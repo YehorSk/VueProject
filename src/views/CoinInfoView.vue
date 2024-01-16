@@ -36,7 +36,7 @@
             <v-btn type="submit" block class="mt-2" :disabled="totalAmount>=userPrefStore.money || totalAmount<=0" @click="addToPortfolio(coin,amount,totalAmount)">Buy</v-btn>
           </v-form>
         </v-sheet>
-        <div v-if="userPrefStore.userHave(coin)">
+        <div v-if="userPrefStore.userHave(coin) && userPrefStore.userHave(coin).amount>0">
         <h1>Sell {{ coin.name }}</h1>
         <v-sheet width="300" class="mr-auto">
           <v-form @submit.prevent>
@@ -188,6 +188,9 @@ export default {
     sellAmount(value){
       this.totalSellAmount = Math.round(value*this.coin.market_data.current_price[this.userPrefStore.currency] * 100)/100
     }
+  },
+  computed:{
+
   }
 }
 </script>

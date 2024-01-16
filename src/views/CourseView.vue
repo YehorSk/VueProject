@@ -45,7 +45,7 @@
           <div class="overview">
             <p>{{ name }}</p>
           </div>
-          <div class="description"><p>About this lesson</p></div>
+          <div class="description"><p>{{ text }}</p></div>
           <!-- Lesson description and content go here -->
         </div>
       </v-main>
@@ -64,6 +64,7 @@ export default {
       name: lessons[0].title,
       link: lessons[0].link,
       prise: lessons[0].prise,
+      text: lessons[0].text,
       userPrefStore: useUserPrefStore()
     }
   },
@@ -71,6 +72,7 @@ export default {
     menuClick(action){
       this.name=action.title;
       this.link=action.link;
+      this.text=action.text;
     },
     useLesson(lesson){
       this.userPrefStore.actionLesson(lesson);

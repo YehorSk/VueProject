@@ -14,6 +14,7 @@ export default {
 <template>
   <router-link :to="`/coins/${coin.web_slug}`">
     <v-card
+        v-if="coin.amount>0"
         class="mx-auto my-8"
         max-width="600"
         :title="coin.id"
